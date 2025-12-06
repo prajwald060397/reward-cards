@@ -1,0 +1,92 @@
+.header {
+  width: 100%;
+  padding: 10px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--header-bg);
+  color: var(--bg-white);
+}
+
+/* Left Logo */
+.logo-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 125px;
+  height: 45px;
+  object-fit: contain;
+}
+
+/* Right Side Icons */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* General Icon Styling */
+.icon {
+  position: relative;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .material-icons {
+    font-size: 20px;
+    color: white;
+  }
+}
+
+/* Notification Badge */
+.notification .badge {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  background: var(--primary-orange);
+  color: white;
+  border-radius: 50%;
+  font-size: 10px;
+  padding: 0px 5px;
+  font-weight: 600;
+}
+
+/* Profile Image */
+.profile {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--bg-white);
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 8px 15px;
+  }
+
+  .logo {
+    width: 100px;
+    height: 35px;
+  }
+
+  .icon {
+    padding: 6px;
+
+    .material-icons {
+      font-size: 18px;
+    }
+  }
+
+  .profile {
+    width: 32px;
+    height: 32px;
+  }
+}

@@ -1,0 +1,18 @@
+<div class="card">
+  <img [src]="img" />
+
+  @if (item.quantity === 0) {
+  <div class="tag out">Out of Stock</div>
+  }
+
+  @if (item.quantity !== null && item.quantity <= item.low_quantity && item.quantity> 0) {
+    <div class="tag demand">
+      ON HIGH DEMAND (Only {{ item.quantity }} left)
+    </div>
+    }
+
+
+    <h4>{{ item.name }}</h4>
+    <p>{{ item.points }} Points</p>
+    <small>Valid until {{ item.valid_until | date }}</small>
+</div>

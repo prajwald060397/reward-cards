@@ -1,0 +1,149 @@
+.search-box {
+  width: 100%;
+  margin-bottom: 20px;
+
+  input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+
+    &:focus {
+      border-color: #888;
+    }
+  }
+}
+
+.layout {
+  display: flex;
+  gap: 25px;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
+}
+
+.items-section {
+  flex: 1;
+
+  .top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    span {
+      font-size: 16px;
+      color: #0b006b;
+    }
+
+    .sort-btn {
+      padding: 8px 16px;
+      background: #e90000;
+      color: white;
+      border-radius: 6px;
+      font-weight: 500;
+
+      &:hover {
+        background: #c30000;
+      }
+    }
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 20px;
+  }
+}
+
+.applied-filters {
+  margin: 12px 0 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  strong {
+    font-size: 14px;
+    color: #333;
+  }
+
+  .filter-pill {
+    background: #f0f2f8;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    .close {
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+
+  .clear {
+    background: #e7e7e7;
+    cursor: pointer;
+    font-weight: 500;
+
+    &:hover {
+      background: #dcdcdc;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+  justify-content: flex-end;
+
+  select {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+
+  .per-page {
+    font-size: 14px;
+    color: #555;
+    margin-right: 8px;
+  }
+
+  .nav-btn {
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: #f5f5f5;
+    cursor: pointer;
+    border: 1px solid #ddd;
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+
+  .page-info {
+    font-size: 14px;
+    color: #333;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  /* dark overlay */
+  backdrop-filter: blur(1px);
+  z-index: 1500;
+  /* must be BELOW sort panel */
+}

@@ -1,0 +1,33 @@
+<div class="panel" [class.open]="open">
+
+  <!-- HEADER -->
+  <div class="header-row">
+    <span class="title">Filter By</span>
+    <span class="reset" (click)="reset()">Reset All</span>
+  </div>
+
+  <hr />
+
+  <!-- SORT SECTION -->
+  <div class="sort-section">
+    <div class="section-title">
+      <span>Sort</span>
+      <span class="chevron">–</span>
+    </div>
+
+    <div class="sort-buttons">
+      <button class="pill" [class.active]="selectedSort === 'asc'" (click)="apply('asc')">
+        A to Z
+      </button>
+
+      <button class="pill" [class.active]="selectedSort === 'desc'" (click)="apply('desc')">
+        Z to A
+      </button>
+    </div>
+  </div>
+
+  <!-- APPLY BUTTON -->
+  <button class="apply-btn" (click)="close.emit()">
+    Apply
+  </button>
+</div>

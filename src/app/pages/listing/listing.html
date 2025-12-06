@@ -1,0 +1,78 @@
+<app-header></app-header>
+
+<div class="container">
+
+  <!-- Search Bar -->
+  <div class="search-box">
+    <input type="text" placeholder="Search..." (input)="search($event)" />
+  </div>
+
+  <!-- Applied Filters -->
+  @if (appliedFilters.length > 0) {
+  <div class="applied-filters">
+    <strong>Applied Filters:</strong>
+
+    @for (f of appliedFilters; track f) {
+    <div class="filter-pill">
+      {{ f }}
+    </div>
+    }
+
+    <div class="filter-pill clear" (click)="clearFilters()">
+      Clear Filters ×
+    </div>
+  </div>
+  }
+
+  <div class="layout">
+
+    <!-- LEFT CATEGORY PANEL -->
+    <app-category-panel [clearTrigger]="clearCounter" (selectedChange)="updateAppliedFilters($event)">
+    </app-category-panel>
+
+    <!-- RIGHT ITEMS LIST -->
+    <div class="items-section">
+
+      <div class="top-row">
+        <span>{{ filteredRewards.length }} results found</span>
+
+        <button class="sort-btn" (click)="sortPanelOpen = true">
+          Sort
+        </button>
+      </div>
+
+      <!-- Cards Grid -->
+      <div class="card-grid">
+        @for (item of pagedRewards; track item) {
+        <app-reward-card [item]="item"></app-reward-card>
+        }
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination">
+
+        <!-- Page size dropdown -->
+        <select [(ngModel)]="pageSize" (change)="updatePagedData()">
+          @for (size of pageSizes; track size) {
+          <option [value]="size">{{ size }}</option>
+          }
+        </select> per page
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- SORT PANEL -->
+
+@if (sortPanelOpen) {
+<div class="backdrop" (click)="sortPanelOpen = false"></div>
+}
+
+<app-sort-panel [open]="sortPanelOpen" (close)="sortPanelOpen = false" (sort)="applySort($event)">
+</app-sort-panel>
+
+<app-footer></app-footer>

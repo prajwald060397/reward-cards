@@ -1,0 +1,31 @@
+<div class="categories-box">
+  <h3>Categories</h3>
+
+  @for (cat of categories; track cat) {
+    <div class="cat-card">
+
+      <div class="cat-header" (click)="toggle(cat)">
+        
+        <div class="left">
+          <span class="chevron" [class.open]="cat.expanded">⌄</span>
+          <span class="name">{{ cat.name }}</span>
+        </div>
+
+        <span
+          class="check"
+          [class.active]="cat.selected"
+          (click)="select(cat); $event.stopPropagation()">
+        </span>
+
+      </div>
+
+      @if (cat.expanded) {
+        <div class="content">
+          <p>{{ cat.description }}</p>
+        </div>
+      }
+
+    </div>
+  }
+</div>
+

@@ -1,0 +1,135 @@
+.footer {
+  margin-top: 40px;
+  padding: 35px 80px;
+  background: #fafbff;
+  border-top: 1px solid #e4e6eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  /* makes spacing better */
+}
+
+/* Column containers */
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* LEFT COLUMN */
+.footer-logo {
+  width: 160px;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.copy {
+  font-size: 14px;
+  color: var(--text-mid);
+}
+
+/* CENTER COLUMN */
+.center {
+  text-align: center;
+
+  .title {
+    font-weight: 600;
+    margin-bottom: 2px;
+    color: var(--text-dark);
+  }
+
+  .value {
+    color: var(--text-mid);
+    font-size: 14px;
+  }
+}
+
+/* RIGHT COLUMN */
+.right {
+  text-align: right;
+
+  .title {
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #333;
+  }
+
+  a {
+    color: var(--text-mid);
+    font-size: 14px;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* ============================
+    TABLET RESPONSIVE (768–1024px)
+   ============================ */
+@media (max-width: 1024px) {
+  .footer {
+    padding: 25px 40px;
+    gap: 20px;
+  }
+
+  .footer-logo {
+    width: 130px;
+  }
+
+  .footer-col {
+    gap: 4px;
+  }
+}
+
+/* ============================
+    MOBILE RESPONSIVE (<768px)
+   ============================ */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 25px 20px;
+  }
+
+  .footer-col {
+    align-items: center;
+    text-align: center;
+  }
+
+  .right,
+  .center,
+  .left {
+    text-align: center;
+  }
+
+  .footer-logo {
+    width: 140px;
+    margin-left: 0;
+    /* remove negative shift */
+  }
+}
+
+/* VERY SMALL DEVICES (less than 480px) */
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 10px;
+  }
+
+  .footer-logo {
+    width: 120px;
+  }
+
+  .title {
+    font-size: 15px;
+  }
+
+  a,
+  .value,
+  .copy {
+    font-size: 13px;
+  }
+}

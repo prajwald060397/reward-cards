@@ -1,1 +1,149 @@
-/* You can add global styles to this file, and also import other style files */
+
+// Include theming for Angular Material with `mat.theme()`.
+// This Sass mixin will define CSS variables that are used for styling Angular Material
+// components according to the Material 3 design spec.
+// Learn more about theming and how to use it for your application's
+// custom components at https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
+
+html {
+  @include mat.theme((
+    color: (
+      primary: mat.$rose-palette,
+      tertiary: mat.$red-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}
+
+body {
+  // Default the application to a light color theme. This can be changed to
+  // `dark` to enable the dark color theme, or to `light dark` to defer to the
+  // user's system settings.
+  color-scheme: light;
+
+  // Set a default background, font and text colors for the application using
+  // Angular Material's system-level CSS variables. Learn more about these
+  // variables at https://material.angular.dev/guide/system-variables
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+
+  // Reset the user agent margin.
+  margin: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #f5f6fb;
+  color: #333;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root {
+  /* ----------------------------------------------------
+     Core Colors
+  ------------------------------------------------------*/
+  --primary-red: #e60000;
+  --primary-red-dark: #c30000;
+  --primary-red-light: #ff6666;
+  --primary-orange: #e67e22;
+
+  --text-dark: #333333;
+  --text-mid: #555555;
+  --text-light: #777777;
+  --text-muted: #999999;
+
+  --bg-white: #ffffff;
+  --bg-light: #fafbff;
+  --border-light: #e4e6eb;
+
+  /* ----------------------------------------------------
+     Shadows
+  ------------------------------------------------------*/
+  --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.06);
+
+  /* ----------------------------------------------------
+     Radius
+  ------------------------------------------------------*/
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* ----------------------------------------------------
+     Spacing
+  ------------------------------------------------------*/
+  --space-xs: 6px;
+  --space-sm: 10px;
+  --space-md: 16px;
+  --space-lg: 20px;
+
+  /* ----------------------------------------------------
+     Font Sizes
+  ------------------------------------------------------*/
+  --font-10: 10px;
+  --font-12: 12px;
+  --font-14: 14px;
+  --font-16: 16px;
+  --font-18: 18px;
+  --font-20: 20px;
+  --font-22: 22px;
+  --font-24: 24px;
+  --font-28: 28px;
+  --font-32: 32px;
+
+  /* ----------------------------------------------------
+     Font Weights
+  ------------------------------------------------------*/
+  --fw-thin: 100;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* ----------------------------------------------------
+     Component Colors (Optional)
+  ------------------------------------------------------*/
+  --header-bg: var(--primary-red);
+  --footer-bg: var(--bg-light);
+  --card-bg: var(--bg-white);
+  --category-selected: var(--primary-red);
+  --category-border: var(--border-light);
+  --sort-active-bg: var(--primary-red);
+  --sort-btn-bg: #efefef;
+
+  /* ----------------------------------------------------
+     Animation / Transition
+  ------------------------------------------------------*/
+  --transition: 0.25s ease-in-out;
+}
