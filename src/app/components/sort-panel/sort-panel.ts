@@ -16,10 +16,22 @@ export class SortPanel {
   apply(order: 'asc' | 'desc') {
     this.selectedSort = order;
     this.sort.emit(order);
+    this.close.emit();
   }
 
   reset() {
     this.selectedSort = null; // clear UI
     this.sort.emit('none');
+  }
+
+  selectSOrt(order: 'asc' | 'desc') {
+    this.selectedSort = order;
+  }
+
+  applysort() {
+    if (this.selectedSort) {
+      this.sort.emit(this.selectedSort);
+      this.close.emit();
+    }
   }
 }

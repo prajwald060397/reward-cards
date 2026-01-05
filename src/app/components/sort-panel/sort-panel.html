@@ -16,18 +16,18 @@
     </div>
 
     <div class="sort-buttons">
-      <button class="pill" [class.active]="selectedSort === 'asc'" (click)="apply('asc')">
+      <button class="pill" [class.active]="selectedSort === 'asc'" (click)="selectSOrt('asc')">
         A to Z
       </button>
 
-      <button class="pill" [class.active]="selectedSort === 'desc'" (click)="apply('desc')">
+      <button class="pill" [class.active]="selectedSort === 'desc'" (click)="selectSOrt('desc')">
         Z to A
       </button>
     </div>
   </div>
 
   <!-- APPLY BUTTON -->
-  <button class="apply-btn" (click)="close.emit()">
+  <button class="apply-btn" (click)="applysort()">
     Apply
   </button>
 </div>
